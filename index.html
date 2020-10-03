@@ -23,7 +23,6 @@
       #navul {
         list-style-type: none;
         display: flex;
-        flex-wrap: wrap;
         flex-direction: row;
         justify-content: flex-start;
       }
@@ -52,7 +51,7 @@
     <div id="infographic">
       <h2>Summary</h2>
       <p>
-        <img src="maskOnInfo.png" alt="infographic" />
+        <img src = "maskOnInfo.png" alt = "infographic" />
       </p>
     </div>
 
@@ -76,21 +75,19 @@
     <div id="idea">
       <h2>Idea</h2>
       <p>
-        The idea of this project is to train a Computer Vision algorithm to
-        detect faces in a video stream and determine who is - and more
-        importantly - who is <b>not</b> wearing their mask in the store.
+        The idea of this project is to train a Computer Vision algorithm to detect faces in a video stream and
+        determine who is - and more importantly - who is <b>not</b> wearing
+        their mask in the store.
       </p>
     </div>
-
-    <div id="results">
+    
+     <div id="results">
       <h2>Results</h2>
       <p>
-        The desired outcome of this project is to create an algorithm that can
-        take in a given video stream and highlight who is wearing a mask and who
-        is not wearing a mask by displaying visual boxes over the video stream
-        to indicate wether the person if correctly wearing their mask. These
-        results could then be used to assess how well people in a given video
-        feed are following CDC guidlines on mask wearing.
+        The desired outcome of this project is to create an algorithm that can take in a given video stream and highlight
+        who is wearing a mask and who is not wearing a mask by displaying visual boxes over the video stream to indicate wether the person
+        if correctly wearing their mask. These results could then be used to assess how well people in a given video feed are following CDC guidlines on
+        mask wearing. 
       </p>
     </div>
 
@@ -106,35 +103,38 @@
         allowfullscreen
       ></iframe>
     </div>
-
+    
     <div id="tech">
-      <h2>Planned Technology</h2>
-      <p>We plan to use:</p>
-      <ul>
-        <li>Computer Vision</li>
-        <li>Convolutional Neural Networks</li>
-        <li>Labeled images for training</li>
-      </ul>
+      <h2>Methods & Planned Technology</h2>
+      <p>We plan on using a kaggle datasets that contains 853 images belonging to 3 classes: With mask, without mask, and mask worn incorrectly. 
+      We intend to use computer vision, convolutional neural networks, and labled images for training. 
+      </p>
     </div>
-
-    <div id="discussion">
+  
+    
+      <div id="discussion">
       <h2>Discussion</h2>
       <p>
-        The ideal outcome for our project would be for our algorithm to be both
-        flexible in terms of video quality/camera angle/lighting/etc. but also
-        very accruate. This would allow the algorithm to be applied to more use
-        cases and would also mean it would not need special use cases or
-        equipment to make work. If this could be achieved, the algorithm would
-        allow resturants/stores/schools/etc. to monitor how well people are
-        following mask guidelines without having to have people going around
-        monitoring. This would greatly increase thw scalability of mask
-        enforcement and also allow for data to be aggreated and problem areas
-        addressed. Going forward, the next steps for our project is to beging
-        compiling our datasets and begin training our initial algorithms in
-        order to assess our approach. From there we will begin looking at the
-        our supervised and unsupervised appraoches and address any challeneges
-        as they come up.
+        The ideal outcome for our project would be for our algorithm to be both flexible in terms of video quality/camera angle/lighting/etc. but also 
+        very accruate. This would allow the algorithm to be applied to more use cases and would also mean it would not need special use cases or equipment to make work.
+        If this could be achieved, the algorithm would allow resturants/stores/schools/etc. to monitor how well people are following mask guidelines without having to have people
+        going around monitoring. This would greatly increase thw scalability of mask enforcement and also allow for data to be aggreated and problem areas addressed. Going forward, the next steps for our project
+        is to beging compiling our datasets and begin training our initial algorithms in order to assess our approach. From there we will begin looking at the our supervised and unsupervised appraoches and address any challeneges as they come up. 
       </p>
+    </div>
+    <div id="references">
+      <h2>References</h2>
+      <ul>
+        <li>
+          Cabani, Adnane, et al. “MaskedFace-Net -- A Dataset of Correctly/Incorrectly Masked Face Images in the Context of COVID-19.” ArXiv.org, 18 Aug. 2020, arxiv.org/abs/2008.08016. 
+        </li>
+        <li>
+          Chavda, Amit & Dsouza, Jason & Badgujar, Sumeet & Damani, Ankit. (2020). Multi-Stage CNN Architecture for Face Mask Detection. 
+        </li>
+        <li>
+          Larxel. “Face Mask Detection.” Kaggle, 22 May 2020, www.kaggle.com/andrewmvd/face-mask-detection. 
+        </li>
+      </ul>
     </div>
   </body>
 </html>
