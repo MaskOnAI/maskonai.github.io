@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MaskOn</title>
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
+    />
+    <style>
+      header {
+        margin-bottom: 1em;
+        padding-bottom: 1em;
+      }
+
+      nav {
+        width: 100%;
+        height: 3em;
+      }
+
+      #navul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+
+      #navul > li {
+        padding: 2em;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>MaskOn</h1>
+      <nav>
+        <ul id="navul">
+          <li><a href="#intro">Introduction</a></li>
+          <li><a href="#idea">Idea</a></li>
+          <li><a href="#results">Results</a></li>
+          <li><a href="#video">Video</a></li>
+          <li><a href="#tech">Planned Technology</a></li>
+          <li><a href="#discussion">Discussion</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="infographic">
+      <h2>Summary</h2>
+      <p>
+        <img src = "maskOnInfo.png" alt = "infographic" />
+      </p>
+    </div>
+
+    <div id="intro">
+      <h2>Intro</h2>
+      <p>
+        As Covid-19 and the restrictions around it all around the country have
+        started to loosen up, we need to make sure that we don't allow another
+        wave of infections to hit people all around the country again. One of
+        the most effective ways of doing that is by mandating everyone to keep
+        their masks on in case they have to come in proximity with other people.
+        Since there currently is no national mandate for wearing masks in public
+        spaces in the United States, more and more bussines from small to large
+        have taken safety into their own hands. Enforceing and filtering out
+        people who don't follow store requlations usually requires a lot of
+        manpower though, so we have decided to come up with a Machine Learning
+        ideas to reduce the humans needed to do this mundane task.
+      </p>
+    </div>
+
+    <div id="idea">
+      <h2>Idea</h2>
+      <p>
+        The idea of this project is to train a Computer Vision algorithm to detect faces in a video stream and
+        determine who is - and more importantly - who is <b>not</b> wearing
+        their mask in the store.
+      </p>
+    </div>
+    
+     <div id="results">
+      <h2>Results</h2>
+      <p>
+        The desired outcome of this project is to create an algorithm that can take in a given video stream and highlight
+        who is wearing a mask and who is not wearing a mask by displaying visual boxes over the video stream to indicate wether the person
+        if correctly wearing their mask. These results could then be used to assess how well people in a given video feed are following CDC guidlines on
+        mask wearing. 
+      </p>
+    </div>
+
+    <div id="video">
+      <h2>Project Proposal Video</h2>
+      <iframe
+        id="video"
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/zWAfoYXaejQ"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+    
+    <div id="tech">
+      <h2>Methods & Planned Technology</h2>
+      <p>We plan on using a kaggle datasets that contains 853 images belonging to 3 classes: With mask, without mask, and mask worn incorrectly. 
+      We intend to use computer vision, convolutional neural networks, and labled images for training. 
+      </p>
+    </div>
+  
+    
+      <div id="discussion">
+      <h2>Discussion</h2>
+      <p>
+        The ideal outcome for our project would be for our algorithm to be both flexible in terms of video quality/camera angle/lighting/etc. but also 
+        very accruate. This would allow the algorithm to be applied to more use cases and would also mean it would not need special use cases or equipment to make work.
+        If this could be achieved, the algorithm would allow resturants/stores/schools/etc. to monitor how well people are following mask guidelines without having to have people
+        going around monitoring. This would greatly increase thw scalability of mask enforcement and also allow for data to be aggreated and problem areas addressed. Going forward, the next steps for our project
+        is to beging compiling our datasets and begin training our initial algorithms in order to assess our approach. From there we will begin looking at the our supervised and unsupervised appraoches and address any challeneges as they come up. 
+      </p>
+    </div>
+    <div id="references">
+      <h2>References</h2>
+      <ul>
+        <li>
+          Cabani, Adnane, et al. “MaskedFace-Net -- A Dataset of Correctly/Incorrectly Masked Face Images in the Context of COVID-19.” ArXiv.org, 18 Aug. 2020, arxiv.org/abs/2008.08016. 
+        </li>
+        <li>
+          Chavda, Amit & Dsouza, Jason & Badgujar, Sumeet & Damani, Ankit. (2020). Multi-Stage CNN Architecture for Face Mask Detection. 
+        </li>
+        <li>
+          Larxel. “Face Mask Detection.” Kaggle, 22 May 2020, www.kaggle.com/andrewmvd/face-mask-detection. 
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
