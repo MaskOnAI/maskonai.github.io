@@ -5,110 +5,172 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>MaskOn - Mask Detection</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<div id="wrapper">
+<head>
+    <title>MaskOn - Mask Detection</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css"/>
+    </noscript>
+</head>
+<body class="is-preload">
+<div id="wrapper">
 
-			<header id="header">
-				<a href="index.html" class="logo">MaskOn - Mask Detection</a>
-			</header>
+    <header id="header">
+        <a href="index.html" class="logo">MaskOn - Mask Detection</a>
+    </header>
 
-			<nav id="nav">
-				<ul class="links">
-					<li class="active"><a href="#introPost">Intro</a></li>
-					<li><a href="#unsupervised">Mid-Semester Update</a></li>
-				</ul>
-			</nav>
-			
-			<div id="main">
-				<section class="post" id="introPost">
-					<header class="major">
-						<span class="date">Project Into</span>
-						<h1>What we are trying to Achieve</h1>
-					</header>
-					<div class="image main"><iframe width="560" height="315" src="https://www.youtube.com/embed/zWAfoYXaejQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-					<iframe src="https://gtvault-my.sharepoint.com/personal/aproschek3_gatech_edu/_layouts/15/Doc.aspx?sourcedoc={474bfe4e-486d-4740-9c92-ec57c861deb8}&amp;action=embedview&amp;wdAr=1.7777777777777777" width="610px" height="367px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
-					<p>As COVID-19 and the restrictions around it all around the country have started to loosen up, we need to make sure that we don't allow another wave of infections to hit people all around the country again. One of the most effective ways of doing that is by mandating everyone to keep their masks on in case they have to come in proximity with other people. Since there currently is no national mandate for wearing masks in public spaces in the United States, more and more businesses from small to large have taken safety into their own hands. Enforcing and filtering out people who don't follow store regulations usually requires a lot of manpower though, so we have decided to come up with Machine Learning ideas to reduce the humans needed to do this mundane task. The idea of this project is to train a Computer Vision algorithm to detect faces in a video stream and determine who is - and more importantly - who is not wearing their mask in the store.</p>
-					<div class="image main"> <img src="/images/maskOnInfo.png" alt="" style="width: 75%"> </div>
-					<h3>Idea</h3>
-					<p>
-						The idea of this project is to train a Computer Vision algorithm to detect faces in a video stream and
-						determine who is - and more importantly - who is <b>not</b> wearing
-						their mask in the store.
-					</p>
-					<h3>Results</h3>
-					<p>
-						The desired outcome of this project is to create an algorithm that can take in a given video stream and highlight
-						who is wearing a mask and who is not wearing a mask by displaying visual boxes over the video stream to indicate wether the person
-						if correctly wearing their mask. These results could then be used to assess how well people in a given video feed are following CDC guidlines on
-						mask wearing. 
-					</p>
-					<h3>Methods & Planned Technology</h3>
-					<p>We plan on using a kaggle datasets that contains 853 images belonging to 3 classes: With mask, without mask, and mask worn incorrectly. 
-					We intend to use computer vision, convolutional neural networks, and labled images for training. 
-					</p>
-					<h3>Discussion</h3>
-					<p>
-						The ideal outcome for our project would be for our algorithm to be both flexible in terms of video quality/camera angle/lighting/etc. but also 
-						very accruate. This would allow the algorithm to be applied to more use cases and would also mean it would not need special use cases or equipment to make work.
-						If this could be achieved, the algorithm would allow resturants/stores/schools/etc. to monitor how well people are following mask guidelines without having to have people
-						going around monitoring. This would greatly increase thw scalability of mask enforcement and also allow for data to be aggreated and problem areas addressed. Going forward, the next steps for our project
-						is to beging compiling our datasets and begin training our initial algorithms in order to assess our approach. From there we will begin looking at the our supervised and unsupervised appraoches and address any challeneges as they come up. 
-					</p>
-				</section>
+    <nav id="nav">
+        <ul class="links">
+            <li class="active"><a href="#introPost">Intro</a></li>
+            <li><a href="#unsupervised">Mid-Semester Update</a></li>
+        </ul>
+    </nav>
 
-				<section class="post" id="unsupervised">
-					<header class="major">
-						<span class="date">Mid Semester Update</span>
-						<h1>Unsupervised Learning</h1>
-					</header>
-					<div class="image main"><iframe width="560" height="315" src="https://www.youtube.com/embed/FKVo438CaGc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-					<iframe src="https://gtvault-my.sharepoint.com/personal/aproschek3_gatech_edu/_layouts/15/Doc.aspx?sourcedoc={d7ee5913-abf7-467f-9a55-deaeec5e1613}&amp;action=embedview&amp;wdAr=1.7777777777777777" width="610px" height="367px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
-					<h2>Methods</h2>
-					<p>
-						When doing research on the different ways of solving this problem, we found that there were two main approaches to take. The first is to check for a face mask directly. The second is to initially check if there is a face that exists then checking if a mask exists. We decided that it’s better if we went with the latter since there is more data with facial data out there. From our research, we also found that the latter method provides more accurate results. The last step would be showing the predicted confidence of whether a person is wearing a mask or not with a bounding box. 
-						After breaking the project down to two main parts, checking for a face then a mask, we decided to break it down further into the unsupervised learning portion and the supervised portion. 
-						For our unsupervised learning part of the project, we have implemented principal component analysis on the dataset of faces to reduce dimensionality to get rid of the unnecessary noise in the data. We chose to use PCA because the image dataset we are using is pretty large. By reducing the number of variables of the dataset makes it significantly easier to visualize and analyze in our later steps, but still preserving the important information at the same time. 
-						The next step we accomplished is building the facial detection model using yolov3. For the supervised section of the project, we are planning on using a set of data with just faces and then making our own augmented dataset of masks on top of those faces.  Then train the datasets for a binary classification.
-					</p>
-				</section>
-			</div>
+    <div id="main">
+        <section class="post" id="introPost">
+            <header class="major">
+                <span class="date">Project Intro</span>
+                <h1>What we are trying to Achieve</h1>
+            </header>
+            <div class="image main">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/zWAfoYXaejQ" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+            <iframe src="https://gtvault-my.sharepoint.com/personal/aproschek3_gatech_edu/_layouts/15/Doc.aspx?sourcedoc={474bfe4e-486d-4740-9c92-ec57c861deb8}&amp;action=embedview&amp;wdAr=1.7777777777777777"
+                    width="610px" height="367px" frameborder="0">This is an embedded <a target="_blank"
+                                                                                        href="https://office.com">Microsoft
+                Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.
+            </iframe>
+            <p>As COVID-19 and the restrictions around it all around the country have started to loosen up, we need to
+                make sure that we don't allow another wave of infections to hit people all around the country again. One
+                of the most effective ways of doing that is by mandating everyone to keep their masks on in case they
+                have to come in proximity with other people. Since there currently is no national mandate for wearing
+                masks in public spaces in the United States, more and more businesses from small to large have taken
+                safety into their own hands. Enforcing and filtering out people who don't follow store regulations
+                usually requires a lot of manpower though, so we have decided to come up with Machine Learning ideas to
+                reduce the humans needed to do this mundane task. The idea of this project is to train a Computer Vision
+                algorithm to detect faces in a video stream and determine who is - and more importantly - who is not
+                wearing their mask in the store.</p>
+            <div class="image main"><img src="/images/maskOnInfo.png" alt="" style="width: 75%"></div>
+        </section>
 
-			<footer id="footer">
-				<section>
-					<h2>References</h2>
-					<ul>
-						<li>
-							Cabani, Adnane, et al. “MaskedFace-Net -- A Dataset of Correctly/Incorrectly Masked Face Images in the Context of COVID-19.” ArXiv.org, 18 Aug. 2020, arxiv.org/abs/2008.08016. 
-						</li>
-						<li>
-							Chavda, Amit & Dsouza, Jason & Badgujar, Sumeet & Damani, Ankit. (2020). Multi-Stage CNN Architecture for Face Mask Detection. 
-						</li>
-						<li>
-							Larxel. “Face Mask Detection.” Kaggle, 22 May 2020, www.kaggle.com/andrewmvd/face-mask-detection. 
-						</li>
-					</ul>
-				</section>
-			</footer>
+        <section class="post" id="unsupervised">
+            <header class="major">
+                <span class="date">Mid Semester Update</span>
+                <h1>Unsupervised Learning</h1>
+            </header>
+            <div class="image main">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/FKVo438CaGc" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+            <iframe src="https://gtvault-my.sharepoint.com/personal/aproschek3_gatech_edu/_layouts/15/Doc.aspx?sourcedoc={d7ee5913-abf7-467f-9a55-deaeec5e1613}&amp;action=embedview&amp;wdAr=1.7777777777777777"
+                    width="610px" height="367px" frameborder="0">This is an embedded <a target="_blank"
+                                                                                        href="https://office.com">Microsoft
+                Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.
+            </iframe>
+            <h2>Methods</h2>
+            <p>
+                The dataset we are using consists of 1776 images including both With and Without masks photos from
+                Prajna Bhandary's <a href="https://github.com/prajnasb/observations">Github</a>. We are using the without mask part of
+                the dataset initially for PCA and we will explore whether it will be necessary to find more data for the
+                supervised learning aspect of our project from either Kaggle or Google depending on the outcome of our
+                results.
+            </p>
+            <p>
+                When doing research on the different ways of solving this problem, we found that there were two main
+                approaches to take. The first is to check for a face mask directly. The second is to initially check if
+                there is a face that exists then checking if a mask exists. We decided that it’s better if we went with
+                the latter since there is more data with facial data out there. From our research, we also found that
+                the latter method provides more accurate results. The last step would be showing the predicted
+                confidence of whether a person is wearing a mask or not with a bounding box.
+            </p>
+            <p>
+                After breaking the project down to two main parts, checking for a face then a mask, we decided to break
+                it down further into the unsupervised learning portion and the supervised portion.
+            </p>
+            <p>
+                For our unsupervised learning part of the project, we have implemented principal component analysis on
+                the dataset of faces to reduce dimensionality to get rid of the unnecessary noise in the data. We chose
+                to use PCA because the image dataset we are using is pretty large. By reducing the number of variables
+                of the dataset makes it significantly easier to visualize and analyze in our later steps, but still
+                preserving the important information at the same time.
+                For the supervised section of the project, we are planning on using the dataset of faces that we have
+                processed during the unsupervised part of the project and making our own augmented dataset of masks on
+                top of those faces and training the datasets for a binary classification. When researching the different
+                methods of accomplishing this, we looked at both yoloV3 and MobileNetV2(SSD)’s face detection model.
+                With YOLO, the system could recognize objects in images and videos swiftly whereas SSD (Single shot
+                Detector) runs a convolutional network on input image only one time and computes a feature map. When
+                comparing the two different options, we found that SSD performs well when dealing with a large amount of
+                objects, however, when dealing with smaller object sizes, it tends to have a lower accuracy even when
+                the confidence threshold is increased. With YOLOv3, there is a more stable detection with even a lower
+                confidence threshold. We are also planning on looking into Resnet50, but YOLOv3 seems like the best
+                model for us to explore further.
 
-			<div id="copyright">
-				<ul><li>&copy; MaskOn</li></ul>
-			</div>
-		</div>
+            </p>
+            <h3>Results</h3>
+            <p>
+                The desired outcome of this project is to create an algorithm that can take in a given video stream and
+                highlight
+                who is wearing a mask and who is not wearing a mask by displaying visual boxes over the video stream to
+                indicate whether the person
+                if correctly wearing their mask. These results could then be used to assess how well people in a given
+                video feed are following CDC guidlines on
+                mask wearing.
+            </p>
+            <h3>Discussion</h3>
+            <p>
+                The ideal outcome for our project would be for our algorithm to be both flexible in terms of video
+                quality/camera angle/lighting/etc. but also
+                very accruate. This would allow the algorithm to be applied to more use cases and would also mean it
+                would not need special use cases or equipment to make work.
+                If this could be achieved, the algorithm would allow resturants/stores/schools/etc. to monitor how well
+                people are following mask guidelines without having to have people
+                going around monitoring. This would greatly increase thw scalability of mask enforcement and also allow
+                for data to be aggreated and problem areas addressed. Going forward, the next steps for our project
+                is to beging compiling our datasets and begin training our initial algorithms in order to assess our
+                approach. From there we will begin looking at the our supervised and unsupervised appraoches and address
+                any challeneges as they come up.
+            </p>
+        </section>
+    </div>
 
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+    <footer id="footer">
+        <section>
+            <h2>References</h2>
+            <ul>
+                <li>
+                    Cabani, Adnane, et al. “MaskedFace-Net -- A Dataset of Correctly/Incorrectly Masked Face Images in
+                    the Context of COVID-19.” ArXiv.org, 18 Aug. 2020, arxiv.org/abs/2008.08016.
+                </li>
+                <li>
+                    Chavda, Amit & Dsouza, Jason & Badgujar, Sumeet & Damani, Ankit. (2020). Multi-Stage CNN
+                    Architecture for Face Mask Detection.
+                </li>
+                <li>
+                    Larxel. “Face Mask Detection.” Kaggle, 22 May 2020, www.kaggle.com/andrewmvd/face-mask-detection.
+                </li>
+            </ul>
+        </section>
+    </footer>
 
-	</body>
+    <div id="copyright">
+        <ul>
+            <li>&copy; MaskOn</li>
+        </ul>
+    </div>
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
 </html>
