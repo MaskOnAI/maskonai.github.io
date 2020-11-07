@@ -114,13 +114,27 @@
             </p>
             <h3>Results</h3>
             <p>
-                The desired outcome of this project is to create an algorithm that can take in a given video stream and
-                highlight
-                who is wearing a mask and who is not wearing a mask by displaying visual boxes over the video stream to
-                indicate whether the person
-                if correctly wearing their mask. These results could then be used to assess how well people in a given
-                video feed are following CDC guidlines on
-                mask wearing.
+                For our final project, we will be evaluating our results based on the accuracy of the algorithm, seeing
+                whether the masks are properly being detected.
+            </p>
+            <p>
+                For the unsupervised learning section, we ran PCA on all of the No-mask images and calculated the
+                average variance retained with various different numbers of components. We also calculated the
+                compression ratio. We did this in order to determine how much we can compress the images to optimize the
+                model when training the images but still retaining the most important details.
+            </p>
+            <div class="image main"><img src="/images/graph1.jpg" alt="" style="width: 75%"></div>
+            <p>
+                We also ran the PCA we implemented in our homework on one of the images in our dataset to have a visual
+                check.
+            </p>
+            <div class="image main"><img src="/images/graph2.png" alt="" style="width: 75%"></div>
+            <div class="image main"><img src="/images/graph3.png" alt="" style="width: 75%"></div>
+            <div class="image main"><img src="/images/graph4.png" alt="" style="width: 75%"></div>
+            <p>
+                We also plotted the data for every image, and analyzed the distributions of variance retained when run
+                at different numbers of components, we found where the variance decreases in the results and concluded
+                that it's best around 32 components.
             </p>
             <h3>Discussion</h3>
             <p>
