@@ -5,198 +5,305 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+
 <head>
     <title>MaskOn - Mask Detection</title>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-    <link rel="stylesheet" href="assets/css/main.css"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
     <noscript>
-        <link rel="stylesheet" href="assets/css/noscript.css"/>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
     </noscript>
 </head>
+
 <body class="is-preload">
-<div id="wrapper">
+    <div id="wrapper">
 
-    <header id="header">
-        <a href="index.html" class="logo">MaskOn - Mask Detection</a>
-    </header>
+        <header id="header">
+            <a href="index.html" class="logo">MaskOn - Mask Detection</a>
+        </header>
 
-    <nav id="nav">
-        <ul class="links">
-            <li class="active"><a href="#introPost">Intro</a></li>
-            <li><a href="#unsupervised">Mid-Semester Update</a></li>
-        </ul>
-    </nav>
-
-    <div id="main">
-        <section class="post" id="introPost">
-            <header class="major">
-                <span class="date">Project Intro</span>
-                <h1>What we are trying to Achieve</h1>
-            </header>
-            <div class="image main">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/zWAfoYXaejQ" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-            </div>
-            <iframe src="https://gtvault-my.sharepoint.com/personal/aproschek3_gatech_edu/_layouts/15/Doc.aspx?sourcedoc={474bfe4e-486d-4740-9c92-ec57c861deb8}&amp;action=embedview&amp;wdAr=1.7777777777777777"
-                    width="610px" height="367px" frameborder="0">This is an embedded <a target="_blank"
-                                                                                        href="https://office.com">Microsoft
-                Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.
-            </iframe>
-            <p>As COVID-19 and the restrictions around it all around the country have started to loosen up, we need to
-                make sure that we don't allow another wave of infections to hit people all around the country again. One
-                of the most effective ways of doing that is by mandating everyone to keep their masks on in case they
-                have to come in proximity with other people. Since there currently is no national mandate for wearing
-                masks in public spaces in the United States, more and more businesses from small to large have taken
-                safety into their own hands. Enforcing and filtering out people who don't follow store regulations
-                usually requires a lot of manpower though, so we have decided to come up with Machine Learning ideas to
-                reduce the humans needed to do this mundane task. The idea of this project is to train a Computer Vision
-                algorithm to detect faces in a video stream and determine who is - and more importantly - who is not
-                wearing their mask in the store.</p>
-            <div class="image main"><img src="/images/maskOnInfo.png" alt="" style="width: 75%"></div>
-        </section>
-
-        <section class="post" id="unsupervised">
-            <header class="major">
-                <span class="date">Mid Semester Update</span>
-                <h1>Unsupervised Learning</h1>
-            </header>
-            <div class="image main">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/FKVo438CaGc" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-            </div>
-            <iframe src="https://gtvault-my.sharepoint.com/personal/aproschek3_gatech_edu/_layouts/15/Doc.aspx?sourcedoc={d7ee5913-abf7-467f-9a55-deaeec5e1613}&amp;action=embedview&amp;wdAr=1.7777777777777777"
-                    width="610px" height="367px" frameborder="0">This is an embedded <a target="_blank"
-                                                                                        href="https://office.com">Microsoft
-                Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.
-            </iframe>
-            <h2>Methods</h2>
-            <p>
-                The dataset we are using consists of 1776 images including both With and Without masks photos from
-                Prajna Bhandary's <a href="https://github.com/prajnasb/observations">Github</a>. We are using the
-                without mask part of
-                the dataset initially for PCA and we will explore whether it will be necessary to find more data for the
-                supervised learning aspect of our project from either Kaggle or Google depending on the outcome of our
-                results.
-            </p>
-            <p>
-                When doing research on the different ways of solving this problem, we found that there were two main
-                approaches to take. The first is to check for a face mask directly. The second is to initially check if
-                there is a face that exists then checking if a mask exists. We decided that it’s better if we went with
-                the latter since there is more data with facial data out there. From our research, we also found that
-                the latter method provides more accurate results. The last step would be showing the predicted
-                confidence of whether a person is wearing a mask or not with a bounding box.
-            </p>
-            <p>
-                After breaking the project down to two main parts, checking for a face then a mask, we decided to break
-                it down further into the unsupervised learning portion and the supervised portion.
-            </p>
-            <p>
-                For our unsupervised learning part of the project, we have implemented principal component analysis on
-                the dataset of faces to reduce dimensionality to get rid of the unnecessary noise in the data. We chose
-                to use PCA because the image dataset we are using is pretty large. By reducing the number of variables
-                of the dataset makes it significantly easier to visualize and analyze in our later steps, but still
-                preserving the important information at the same time.
-                For the supervised section of the project, we are planning on using the dataset of faces that we have
-                processed during the unsupervised part of the project and making our own augmented dataset of masks on
-                top of those faces and training the datasets for a binary classification. When researching the different
-                methods of accomplishing this, we looked at both yoloV3 and MobileNetV2(SSD)’s face detection model.
-                With YOLO, the system could recognize objects in images and videos swiftly whereas SSD (Single shot
-                Detector) runs a convolutional network on input image only one time and computes a feature map. When
-                comparing the two different options, we found that SSD performs well when dealing with a large amount of
-                objects, however, when dealing with smaller object sizes, it tends to have a lower accuracy even when
-                the confidence threshold is increased. With YOLOv3, there is a more stable detection with even a lower
-                confidence threshold. We are also planning on looking into Resnet50, but YOLOv3 seems like the best
-                model for us to explore further.
-
-            </p>
-            <h3>Results</h3>
-            <p>
-                For our final project, we will be evaluating our results based on the accuracy of the algorithm, seeing
-                whether the masks are properly being detected.
-            </p>
-            <p>
-                For the unsupervised learning section, we ran PCA on all of the No-mask images and calculated the
-                average variance retained with various different numbers of components. We also calculated the
-                compression ratio. We did this in order to determine how much we can compress the images to optimize the
-                model when training the images but still retaining the most important details.
-            </p>
-            <div class="image main"><img src="/images/graph2.png" alt="" style="width: 75%"></div>
-            <p>
-                We also ran the PCA we implemented in our homework on one of the images in our dataset to have a visual
-                check.
-            </p>
-            <div class="image main"><img src="/images/graph5.png" alt="" style="width: 75%"></div>
-            <div class="image main"><img src="/images/graph3.png" alt="" style="width: 75%"></div>
-            <div class="image main"><img src="/images/graph4.png" alt="" style="width: 75%"></div>
-            <p>
-                We also plotted the data for every image, and analyzed the distributions of variance retained when run
-                at different numbers of components, we found where the variance decreases in the results and concluded
-                that it's best around 32 components.
-            </p>
-            <h3>Discussion</h3>
-            <p>
-                The desired outcome of this project is to create an algorithm that can take in a given video stream and
-                highlight who is wearing a mask and who is not wearing a mask by displaying visual boxes over the video
-                stream to indicate whether the person is correctly wearing their mask. These results could then be used
-                to assess how well people in a given video feed are following CDC guidelines on mask wearing.
-            </p>
-        </section>
-    </div>
-
-    <footer id="footer">
-        <section>
-            <h2>References</h2>
-            <ul>
-                <li>
-                    Cabani, Adnane, et al. “MaskedFace-Net -- A Dataset of Correctly/Incorrectly Masked Face Images in
-                    the Context of COVID-19.” ArXiv.org, 18 Aug. 2020, arxiv.org/abs/2008.08016.
-                </li>
-                <li>
-                    Chavda, Amit & Dsouza, Jason & Badgujar, Sumeet & Damani, Ankit. (2020). Multi-Stage CNN
-                    Architecture for Face Mask Detection.
-                </li>
-                <li>
-                    Larxel. “Face Mask Detection.” Kaggle, 22 May 2020, www.kaggle.com/andrewmvd/face-mask-detection.
-                </li>
-                <li>
-                    Gorordo, Ibai. “Part 2- Yet Another Face Mask Detector... (OpenCV Spatial AI Competition Journey).”
-                    Medium, Towards Data Science, 24 Aug. 2020,
-                    towardsdatascience.com/part-2-yet-another-face-mask-detector-opencv-spatial-ai-competition-journey-91dfaf96c6e8.
-                </li>
-                <li>
-                    “DAGNetwork.” ResNet-50 Convolutional Neural Network - MATLAB,
-                    www.mathworks.com/help/deeplearning/ref/resnet50.html.
-                </li>
-                <li>
-                    “What Is the Main Difference Between YOLO And SSD?” Technostacks Infotech Pvt. Ltd., 14 Apr. 2020,
-                    technostacks.com/blog/yolo-vs-ssd/.
-                </li>
-                <li>
-                    Hui, Jonathan. “Object Detection: Speed and Accuracy Comparison (Faster R-CNN, R-FCN, SSD, FPN,
-                    RetinaNet and...” Medium, Medium, 26 Mar. 2019,
-                    jonathan-hui.medium.com/object-detection-speed-and-accuracy-comparison-faster-r-cnn-r-fcn-ssd-and-yolo-5425656ae359.
-                </li>
+        <nav id="nav">
+            <ul class="links">
+                <li class="active"><a href="#introPost">Intro</a></li>
+                <li><a href="#unsupervised">Unsupervised</a></li>
+                <li><a href="#supervised">Supervised</a></li>
+                <li><a href="#results">Results</a></li>
             </ul>
-        </section>
-    </footer>
+        </nav>
 
-    <div id="copyright">
-        <ul>
-            <li>&copy; MaskOn</li>
-        </ul>
+        <div id="main">
+            <section class="post" id="introPost">
+                <header class="major">
+                    <span class="date">Project Intro</span>
+                    <h1>What we are trying to Achieve</h1>
+                </header>
+                <div class="image main">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/zWAfoYXaejQ" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <p>As COVID-19 and the restrictions around it all around the country have started to loosen up, we need
+                    to
+                    make sure that we don't allow another wave of infections to hit people all around the country again.
+                    One
+                    of the most effective ways of doing that is by mandating everyone to keep their masks on in case
+                    they
+                    have to come in proximity with other people. Since there currently is no national mandate for
+                    wearing
+                    masks in public spaces in the United States, more and more businesses from small to large have taken
+                    safety into their own hands. Enforcing and filtering out people who don't follow store regulations
+                    usually requires a lot of manpower though, so we have decided to come up with Machine Learning ideas
+                    to
+                    reduce the humans needed to do this mundane task. The idea of this project is to train a Computer
+                    Vision
+                    algorithm to detect faces in a video stream and determine who is - and more importantly - who is not
+                    wearing their mask in the store.</p>
+                <div class="image main"><img src="/images/Mask_On.png" alt="" style="width: 75%"></div>
+            </section>
+
+            <section class="post" id="unsupervised">
+                <header class="major">
+                    <span class="date">Methods</span>
+                    <h1>Unsupervised Learning</h1>
+                </header>
+                <div class="image main">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/FKVo438CaGc" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <p>
+                    The dataset we are using consists of 1776 images including both With and Without masks photos from
+                    Prajna Bhandary's <a href="https://github.com/prajnasb/observations">Github</a>. We are using the
+                    without mask part of
+                    the dataset initially for PCA and we will explore whether it will be necessary to find more data for
+                    the
+                    supervised learning aspect of our project from either Kaggle or Google depending on the outcome of
+                    our
+                    results.
+                </p>
+                <p>
+                    When doing research on the different ways of solving this problem, we found that there were two main
+                    approaches to take. The first is to check for a face mask directly. The second is to initially check
+                    if
+                    there is a face that exists then checking if a mask exists. We decided that it’s better if we went
+                    with
+                    the latter since there is more data with facial data out there. From our research, we also found
+                    that
+                    the latter method provides more accurate results. The last step would be showing the predicted
+                    confidence of whether a person is wearing a mask or not with a bounding box.
+                </p>
+                <p>
+                    After breaking the project down to two main parts, checking for a face then a mask, we decided to
+                    break
+                    it down further into the unsupervised learning portion and the supervised portion.
+                </p>
+                <p>
+                    For our unsupervised learning part of the project, we have implemented principal component analysis
+                    on
+                    the dataset of faces to reduce dimensionality to get rid of the unnecessary noise in the data. We
+                    chose
+                    to use PCA because the image dataset we are using is pretty large. By reducing the number of
+                    variables
+                    of the dataset makes it significantly easier to visualize and analyze in our later steps, but still
+                    preserving the important information at the same time.
+                </p>
+                <h2>Comparing Performance Metrics</h2>
+                <p>When running the PCA algorithm for image compression, we plotted the compression data for every
+                    image, and analyzed the distributions of variance retained when run at different numbers of
+                    components. The box plots below show these distributions and allow us to compare both metrics across
+                    different numbers of components.
+                </p>
+                <p>
+                    We found that using 32 components was optimal for moving forward, as the compression is significant
+                    while still retaining variance on each image. Not only this, but we can see that the performance
+                    metrics vary less within the dataset here, so more of the data falls within acceptable ranges.
+
+                </p>
+                <div class="image main"><img src="/images/graph3.png" alt="" style="width: 75%"></div>
+                <div class="image main"><img src="/images/graph4.png" alt="" style="width: 75%"></div>
+            </section>
+            <section class="post" id="supervised">
+                <header class="major">
+                    <h1>Supervised Learning</h1>
+                </header>
+                <p>
+                    For the supervised section of the project, we were initially planning on using the dataset of faces
+                    that we process during the unsupervised part of the project and making our own augmented dataset of
+                    masks on top of those faces and training the datasets for a binary classification. However, after
+                    attempting to implement this, we realized the augmented dataset of masks were not as useful as we
+                    hoped they would be. The augmented masks were oftentimes not placed properly even using the
+                    pretrained facial detection model, YOLOv3. We decided to use the With mask photos that were found in
+                    the initial dataset we were using and ran PCA on that as well.
+                </p>
+                <p>
+                    Using the data, we used a convolutional neural network to classify the dataset into the ones with
+                    masked faces and the ones without. We decided on using CNN because it worked well for analyzing
+                    images. We first decided that we needed a training set and a test set of images which our model will
+                    use to either train or test with. We played around with the numbers for this and ended up settling
+                    on a split size of 0.8, giving the training set 80% of the images and the testing set 20%.
+                </p>
+                <p>
+                    Next, we applied a convolutional kernel over all of the images that gave us a convoluted image. This
+                    image is then used to extract the important features in each individual image. In order for the
+                    model to learn what important features to extract, we had to decide how many filters we needed to
+                    apply to the convoluted image and the amount. After this step, we initially did not include a
+                    rectified linear unit function. However, to help the model not overfit, we added a ReLu function to
+                    be more generalized and to increase the nonlinearity. The next step for the neural network was
+                    pooling. During this process, the convolved images are downsampled and the most important features
+                    are preserved. We chose max pooling which needed the spatial variance and made the network capable
+                    of detecting the mask or lack of mask despite different variables presented (angles, environment,
+                    distance etc). In the last layer, we used the ‘softmax’ function to output a vector that gives the
+                    probability of each of the binary classes. During our checkpoint, we mentioned we were going to use
+                    MobileNetV2, however, since it’s a binary classification, we found that we can just use the Adam
+                    optimizer (an adaptive learning rate optimization algorithm) and binary cross entropy as our loss
+                    function.
+                </p>
+                <p>
+                    Once we implemented the CNN model, it was time to train the model. We started training the model at
+                    23 epochs and increased to 30 epochs. We go into details about our results later on, but once we
+                    built the model, we implemented face detection using the Haar Feature-based Cascade Classifier by
+                    openCV. Using the model, we are able to predict through our web camera the possibility of the two
+                    different classes: without_mask and with_mask.
+
+                </p>
+                <h2>Comparing Performance Metrics</h2>
+            </section>
+            <section class="post" id="results">
+                <header class="major">
+                    <h1>Results</h1>
+                </header>
+                <h3>Results</h3>
+                <p>
+                    For the unsupervised learning section, we ran PCA on all of the No-mask images and calculated the
+                    average variance retained with various different numbers of components. We also calculated the
+                    compression ratio. We did this in order to determine how much we can compress the images to optimize
+                    the
+                    model when training the images but still retaining the most important details.
+                </p>
+
+                <p>
+                    We also ran the PCA we implemented in our homework on one of the images in our dataset to have a
+                    visual
+                    check.
+                </p>
+                <div class="image main"><img src="/images/graph2.png" alt="" style="width: 75%"></div>
+                <p>The PCA algorithm resulted in compressing the images by around 20%, while retaining nearly 98% of the
+                    variance from the original image. The algorithm uses 32 components to rebuild the image, but an
+                    example of the results from a single image are shown below for various numbers of components.
+                </p>
+                <div class="image main"><img src="/images/graph5.png" alt="" style="width: 75%"></div>
+                <p>
+                    The model was trained and validated, and the resulting accuracies and loss after each epoch of
+                    training were plotted. The results shown below.
+                </p>
+                <div class="image main"><img src="/images/accuracy.png" alt="" style="width: 75%"></div>
+                <p>The final model produced a validation accuracy of 96.7%. As hoped for, the accuracy improved
+                    drastically after the first few training epochs, as did the training loss. The model ended up
+                    performing well across validation. Although there were some epochs in which accuracy and loss
+                    suffered, the overall trend was towards improvement. Since the project aims to intake live video
+                    footage, in which faces and frames vary, it was important to have high validation accuracy. This
+                    ensures that the model was not overfitting to our training data and is able to take an unseen image
+                    and return the correct classification.
+                </p>
+                <p>An example of the model’s implementation, pictured below, can be found <a
+                        href="https://www.youtube.com/watch?v=rQ1CgUilG6I&feature=youtu.be">here</a>. This is a
+                    demonstration
+                    of how the model performs with an individual repeating wearing and removing a mask.
+                </p>
+                <div class="image main"><img src="/images/maskdemo.png" alt="" style="width: 75%"></div>
+                <p>This video provides additional confidence in the performance of the model, as previously unseen live
+                    video is able to be correctly classified as either “mask” or “without mask”. The original aim of the
+                    project was to create an algorithm that, given a video stream, would highlight who is and is not
+                    wearing a mask by displaying visual boxes over the stream as indicators. The video shows the
+                    algorithm doing exactly this. There are limitations to our project, and certain features would need
+                    to be added to scale this into widespread usage. It would most likely need to be trained on a larger
+                    dataset that includes more diversity in terms of race, gender, mask type, and quality of the image.
+                    This would allow the model to detect facemasks or lack thereof for a greater number of cases.
+                    Hyperparameters would also continue to be tuned to ensure optimal performance. Camera integration
+                    would also be another step towards widespread use, allowing users to connect this algorithm directly
+                    to their cameras. Once ease of access is improved and the model is trained on a more diverse
+                    dataset, we believe its performance will meet the needs of its users quite well.
+                </p>
+                <h3>Discussion</h3>
+                <p>
+                    The desired outcome of this project is to create an algorithm that can take in a given video stream
+                    and
+                    highlight who is wearing a mask and who is not wearing a mask by displaying visual boxes over the
+                    video
+                    stream to indicate whether the person is correctly wearing their mask. These results could then be
+                    used
+                    to assess how well people in a given video feed are following CDC guidelines on mask wearing.
+                </p>
+            </section>
+        </div>
+
+        <footer id="footer">
+            <section>
+                <h2>References</h2>
+                <ul>
+                    <li>
+                        Cabani, Adnane, et al. “MaskedFace-Net -- A Dataset of Correctly/Incorrectly Masked Face Images
+                        in
+                        the Context of COVID-19.” ArXiv.org, 18 Aug. 2020, arxiv.org/abs/2008.08016.
+                    </li>
+                    <li>
+                        Chavda, Amit & Dsouza, Jason & Badgujar, Sumeet & Damani, Ankit. (2020). Multi-Stage CNN
+                        Architecture for Face Mask Detection.
+                    </li>
+                    <li>
+                        Larxel. “Face Mask Detection.” Kaggle, 22 May 2020,
+                        www.kaggle.com/andrewmvd/face-mask-detection.
+                    </li>
+                    <li>
+                        Gorordo, Ibai. “Part 2- Yet Another Face Mask Detector... (OpenCV Spatial AI Competition
+                        Journey).”
+                        Medium, Towards Data Science, 24 Aug. 2020,
+                        towardsdatascience.com/part-2-yet-another-face-mask-detector-opencv-spatial-ai-competition-journey-91dfaf96c6e8.
+                    </li>
+                    <li>
+                        “DAGNetwork.” ResNet-50 Convolutional Neural Network - MATLAB,
+                        www.mathworks.com/help/deeplearning/ref/resnet50.html.
+                    </li>
+                    <li>
+                        “What Is the Main Difference Between YOLO And SSD?” Technostacks Infotech Pvt. Ltd., 14 Apr.
+                        2020,
+                        technostacks.com/blog/yolo-vs-ssd/.
+                    </li>
+                    <li>
+                        Hui, Jonathan. “Object Detection: Speed and Accuracy Comparison (Faster R-CNN, R-FCN, SSD, FPN,
+                        RetinaNet and...” Medium, Medium, 26 Mar. 2019,
+                        jonathan-hui.medium.com/object-detection-speed-and-accuracy-comparison-faster-r-cnn-r-fcn-ssd-and-yolo-5425656ae359.
+                    </li>
+                    <li>
+                        Team, SuperDataScience. “Convolutional Neural Networks (CNN): Step 2 - Max Pooling.”
+                        SuperDataScience, 2018,
+                        www.superdatascience.com/blogs/convolutional-neural-networks-cnn-step-2-max-pooling/.
+                    </li>
+                    <li>Saha, Sumit. “A Comprehensive Guide to Convolutional Neural Networks - the ELI5 Way.” Medium,
+                        Towards Data Science, 17 Dec. 2018,
+                        towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53.
+                    </li>
+                    <li>“Cascade Classifier.” OpenCV, docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html. </li>
+                </ul>
+            </section>
+        </footer>
+
+        <div id="copyright">
+            <ul>
+                <li>&copy; MaskOn</li>
+            </ul>
+        </div>
     </div>
-</div>
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
 </body>
+
 </html>
