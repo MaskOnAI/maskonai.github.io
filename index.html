@@ -127,6 +127,11 @@
                 <header class="major">
                     <h1>Supervised Learning</h1>
                 </header>
+                <div class="image main">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/GRFN4GETVyw" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
                 <p>
                     For the supervised section of the project, we were initially planning on using the dataset of faces
                     that we process during the unsupervised part of the project and making our own augmented dataset of
@@ -168,6 +173,22 @@
 
                 </p>
                 <h2>Comparing Performance Metrics</h2>
+                <p>
+                    For the final model, a confusion matrix was created to evaluate the performance. Displayed below,
+                    this matrix shows us false positives, false negatives, etc.
+                </p>
+                <div class="image main"><img src="/images/confused.jpg" alt="" style="width: 75%"></div>
+                <p>Based on this matrix, we can see that the model has an overall good accuracy. Most of the
+                    classifications are true, with only a handful getting misclassified. The instances getting
+                    misclassified are the ones we want to analyze to see the faults in our model. In cases where the
+                    model is incorrect, the false positive rate is significantly higher. This means the algorithm will
+                    more often incorrectly guess that one is not wearing a mask when they are wearing a mask rather than
+                    the opposite. For the purposes of this project, this was considered to be a positive attribute,
+                    erroring on the side of caution. More people are incorrectly flagged than let pass without a mask,
+                    so the priority of identifying non-mask people is addressed properly. The model is very accurate,
+                    and considering most of the inaccuracies occur when people are already wearing masks, we felt
+                    comfortable moving forward with this performance.
+                </p>
             </section>
             <section class="post" id="results">
                 <header class="major">
